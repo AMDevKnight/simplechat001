@@ -87,7 +87,8 @@
     msg_send.addEventListener("click", () => {
         let data = {
             user: `{{ Username }}`,
-            msg: user_msg.value
+            msg: user_msg.value,
+            img: `{{imgUrl}}`
         };
         if (user_msg.value != '') {
             appendMessage(data, "outgoing")
@@ -119,10 +120,9 @@
         <h6>${time}</h6>
         </div>
         <div >
-        <img src="{{ imgUrl }}" class="user_img">
+        <img src=${data.img} class="user_img">
         </div>
             `;
-
         div.innerHTML = content;
         chats.appendChild(div);
         chats.scrollTop = chats.scrollHeight;

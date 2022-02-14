@@ -21,13 +21,17 @@ io.on("connection", (socket) => {
         socket.broadcast.emit('user-connected', username)
         io.emit("user-list", users)
     });
+
     socket.on("disconnect", () => {
         var user = users[socket.id]
         socket.broadcast.emit("user-disconnected", user);
         delete users[socket.id];
     })
-    socket.on('message', (data) => {
-        socket.broadcast.emit("message", { user: data.user, msg: data.msg, time: Date.now() })
+
+    socket.on('message', async (data) => {
+        let userdata = await userModel.findOne({ Username: data.user })
+        console.log(userdata.imgUrl)
+        socket.broadcast.emit("message", { user: data.user, msg: data.msg, time: Date.now(), img: userdata.imgUrl })
     })
 });
 
@@ -62,7 +66,6 @@ app.get('/', (req, res) => {
 app.post('/login', async (req, res) => {
     let user = await userModel.findOne({ email: req.body.email });
     if (user) {
-        const username = user.username;
         const validPassword = await bcrypt.compare(req.body.password, user.password);
         if (validPassword) {
             res.cookie('usersIdentified', user.email)
