@@ -30,8 +30,7 @@ io.on("connection", (socket) => {
 
     socket.on('message', async (data) => {
         let userdata = await userModel.findOne({ Username: data.user })
-        console.log(userdata.imgUrl)
-        socket.broadcast.emit("message", { user: data.user, msg: data.msg, time: Date.now(), img: userdata.imgUrl })
+        socket.broadcast.emit("message", { user: data.user, msg: data.msg, time: Date.now() })
     })
 });
 
@@ -86,15 +85,7 @@ app.get('/signup', (req, res) => {
 
 app.post('/signup', async (req, res) => {
     const salt = await bcrypt.genSalt(10);
-    let myFile = req.files.avatar
-    req.body["imgUrl"] = myFile.name
     req.body["password"] = await bcrypt.hash(req.body.password, salt);
-    myFile.mv(`./uploads/${myFile.name}`, (err) => {
-        if (err) {
-            res.send({ uploaded: false })
-            return
-        }
-    })
     const userdata = new userModel(req.body)
     await userdata.save()
     res.render('login', req.body)

@@ -87,8 +87,7 @@
     msg_send.addEventListener("click", () => {
         let data = {
             user: `{{ Username }}`,
-            msg: user_msg.value,
-            img: `{{imgUrl}}`
+            msg: user_msg.value
         };
         if (user_msg.value != '') {
             appendMessage(data, "outgoing")
@@ -117,10 +116,7 @@
         let content = `
         <div class="user_message">
         <h4>${data.msg}</h4>
-        <h6>${time}</h6>
-        </div>
-        <div >
-        <img src=${data.img} class="user_img">
+        <h6>${data.user} <br>${time}</h6>
         </div>
             `;
         div.innerHTML = content;
