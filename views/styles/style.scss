@@ -206,7 +206,7 @@ main {
             div.user-input {
                 @include flexing(row, space-between, stretch);
 
-                .emojionearea {
+                #user-msg {
                     color: white;
                     font-size: $fsize;
                     background-color: #242F3D;
@@ -217,17 +217,6 @@ main {
                     color: white;
                     border-radius: 0;
                     height: 43px;
-
-                    .emojionearea-editor {
-                        color: white;
-                        top: 4px;
-                    }
-
-                    .emojionearea-button {
-                        top: 11px;
-
-                    }
-
                 }
 
                 button {
@@ -296,14 +285,6 @@ main {
                     div.outgoing {
                         padding: 5px 10px 5px 55px;
                     }
-                }
-            }
-
-            div.user-input {
-                @include flexing(row, space-between, stretch);
-
-                .emojionearea-picker {
-                    right: auto;
                 }
             }
         }

@@ -316,7 +316,7 @@ main div.container div.chat-window div.user-input {
           justify-content: space-between;
 }
 
-main div.container div.chat-window div.user-input .emojionearea {
+main div.container div.chat-window div.user-input #user-msg {
   color: white;
   font-size: 16px;
   background-color: #242F3D;
@@ -327,15 +327,6 @@ main div.container div.chat-window div.user-input .emojionearea {
   color: white;
   border-radius: 0;
   height: 43px;
-}
-
-main div.container div.chat-window div.user-input .emojionearea .emojionearea-editor {
-  color: white;
-  top: 4px;
-}
-
-main div.container div.chat-window div.user-input .emojionearea .emojionearea-button {
-  top: 11px;
 }
 
 main div.container div.chat-window div.user-input button {
@@ -396,24 +387,6 @@ main div.container div.chat-window div.user-input button {
   }
   main div.container div.chat-window div.chats div.outgoing {
     padding: 5px 10px 5px 55px;
-  }
-  main div.container div.user-input {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-align: stretch;
-        -ms-flex-align: stretch;
-            align-items: stretch;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  main div.container div.user-input .emojionearea-picker {
-    right: auto;
   }
 }
 /*# sourceMappingURL=style.css.map */
