@@ -18,4 +18,35 @@
             </form>
         </div>
     </div>
+    <div class="alert alert-danger" id="alert" role="alert"></div>
 </div>
+<style>
+    #alert {
+        position: fixed;
+        border: none;
+        border-radius: 0;
+        top: 0px;
+        width: 100%;
+        z-index: 100;
+        display: none;
+    }
+</style>
+<script differ>
+    var msg = `{{ Message }}` || "";
+    if (msg) {
+        showMessage('alert', msg);
+        console.log("hello")
+    }
+
+    function showMessage(elementId, message) {
+        document.getElementById(elementId).style.display = 'block';
+        console.log(elementId)
+        document.getElementById("alert").innerHTML = `<b>Warning!</b> ${message}`
+        setTimeout(`hide("${elementId}")`, 2000);
+    }
+
+    function hide(elementId) {
+        document.getElementById(elementId).style.display = 'none';
+    }
+
+</script>

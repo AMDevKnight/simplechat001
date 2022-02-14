@@ -61,7 +61,7 @@ app.get('/', (req, res) => {
 app.post('/login', async (req, res) => {
     let user = await userModel.findOne({ email: req.body.email });
     if (user) {
-        username = user.username;
+        const username = user.username;
         const validPassword = await bcrypt.compare(req.body.password, user.password);
         if (validPassword) {
             res.cookie('usersIdentified', user.email)
@@ -69,7 +69,7 @@ app.post('/login', async (req, res) => {
             return
         }
         else {
-            res.status(300).render("login", { password: "Incorrect" });
+            res.status(300).render("login", { Message: "Incorrect" });
         }
     } else {
         res.status(300).render("login", { Message: "No user found" });
