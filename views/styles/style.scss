@@ -144,12 +144,13 @@ main {
                     @include flexing(row-reverse, flex-end, center);
 
                     .user_message {
-                        @include flexing(row-reverse, space-between, flex-end);
+                        @include flexing(row-reverse, space-between, center);
                         color: black;
                         background-color: white;
                         border-radius: 15px 15px 15px 0px;
                         text-align: right;
                         margin-left: 10px;
+                        margin-top: 5px;
                         padding: 5px 10px 5px 10px;
 
                         h4 {
@@ -159,6 +160,7 @@ main {
 
                         h6 {
                             color: #242F3D;
+                            text-align: left;
                             font-size: 0.9rem;
                             margin-bottom: 0 !important;
                         }
@@ -175,14 +177,14 @@ main {
                     @include flexing(row, center, center);
 
                     .user_message {
-                        @include flexing(row, space-between, flex-end);
+                        @include flexing(row, space-between, center);
                         margin-left: auto;
                         color: $white;
                         background-color: #2B5378;
                         border-radius: 15px 15px 0px 15px;
                         text-align: right;
                         padding: 5px 10px 5px 10px;
-                        margin-right: 10px;
+                        margin: 5px 10px 0 auto;
 
                         h4 {
                             margin-bottom: 0 !important;
@@ -190,7 +192,7 @@ main {
                         }
 
                         h6 {
-                            color: #242F3D;
+                            color: #00d0ffbd;
                             font-size: 0.9rem;
                             margin-bottom: 0 !important;
                         }

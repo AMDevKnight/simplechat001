@@ -214,9 +214,9 @@ main div.container div.chat-window div.chats div.incoming .user_message {
   -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -225,6 +225,7 @@ main div.container div.chat-window div.chats div.incoming .user_message {
   border-radius: 15px 15px 15px 0px;
   text-align: right;
   margin-left: 10px;
+  margin-top: 5px;
   padding: 5px 10px 5px 10px;
 }
 
@@ -235,6 +236,7 @@ main div.container div.chat-window div.chats div.incoming .user_message h4 {
 
 main div.container div.chat-window div.chats div.incoming .user_message h6 {
   color: #242F3D;
+  text-align: left;
   font-size: 0.9rem;
   margin-bottom: 0 !important;
 }
@@ -269,9 +271,9 @@ main div.container div.chat-window div.chats div.outgoing .user_message {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -281,7 +283,7 @@ main div.container div.chat-window div.chats div.outgoing .user_message {
   border-radius: 15px 15px 0px 15px;
   text-align: right;
   padding: 5px 10px 5px 10px;
-  margin-right: 10px;
+  margin: 5px 10px 0 auto;
 }
 
 main div.container div.chat-window div.chats div.outgoing .user_message h4 {
@@ -290,7 +292,7 @@ main div.container div.chat-window div.chats div.outgoing .user_message h4 {
 }
 
 main div.container div.chat-window div.chats div.outgoing .user_message h6 {
-  color: #242F3D;
+  color: #00d0ffbd;
   font-size: 0.9rem;
   margin-bottom: 0 !important;
 }
